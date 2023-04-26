@@ -53,9 +53,14 @@ public class Main {
             //System.out.println(printer.output(c));
 
             DotPrinter dotPrinter = new DotPrinter(true);
-            FileWriter fileWriter = new FileWriter("ast3.dot");
-            PrintWriter printWriter = new PrintWriter(fileWriter);
-            printWriter.print(xmlPrinter.output(c));
+            try {
+                FileWriter fileWriter = new FileWriter("ast.dot");
+                PrintWriter printWriter = new PrintWriter(fileWriter);
+                printWriter.print(dotPrinter.output(c));
+
+            } catch (Exception e){
+
+            }
 
 
         }catch(Exception e){
